@@ -1,0 +1,206 @@
+/* 
+
+Display
+
+Inline: Placed in the same line, width height automatic acc to content, can not be changed
+Inline-block: Placed in the same line, width height can be changed
+Block: Placed in different lines (line break after content), width height can be changed
+None: Removes the display completely
+
+Note:- Visibility:hidden can also be done to hide the display but it keeps the space, display:none will remove the space
+
+Position: 
+
+Static: This is how the html code will render and position it, (default value)
+Relative: First position based on static will be seen, then the element will offset itself relative to the direction we specify
+So, position: relative; left:20px will push the img away from the static position's left edge by 20 px. Note:- The other elements wont be affected i.e. the natural flow of the html doc will not change
+Absolute: The postiion is changed with respect to the parent, so if inside body it will offset with respect to body, so absolute left 20 would mean that the element will move away from the left edge of the parent by 20 px. Note:- The other elements position IS AFFECTED i.e. this does disrupt the natural flow of the html doc. To make another element say div a parent we need to enclose the child inside that div then we need to go to css and target that div and make it position as relative; with no value specifcation.
+Fixed: It means that the element will be fixed to one place/position even though we scroll through the website (for things like navbars, sidebars, etc.)
+
+
+Font:size 
+
+px- Fixed size, doesn't change if the user has his font size as large or small in his browser preferences
+
+%- Dynamic 100% = 16px
+em- Dynamic 1em = 16 px
+However these properties are dependent on their parent as well, so if parent has size 2em this will add 1 em on top of that
+
+rem- Same as em but it is not dependent on parent, so recommended 
+
+
+Clear and float
+
+Float: left/right/top/bottom makes the element stick to that side and the other element to wrap around it
+Clear: It is like anti-float so the direction mentioned will clear that side and essentially "un-wrap" the element
+*/
+
+p {
+    line-height: 2;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    text-align: center;
+    color: #40514E;
+}
+
+h1 {
+    color: #40bebe;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625em;
+    margin: 50px auto 0 auto;
+}
+
+h2 {
+    color: #1abfbf;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h3 {
+    color: #11999E;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    margin: auto;
+    color: #11999E;
+}
+
+hr {
+    border: dotted 6px #a6fbfb;
+    border-top: none;
+    width: 8%;
+    margin: 10vh 0;
+}
+
+.top-container {
+    padding-top: 180px;
+    padding-bottom: 25vh;
+    display: flex;
+    flex-direction: row;
+    background-image: url(https://images.unsplash.com/photo-1483354483454-4cd359948304?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.middle-container {
+    display: flex;
+    padding: 10vh 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bottom-container {
+    background-color: #66BFBF;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.footer-link {
+    margin: 0 10px
+}
+
+.footer-link:hover {
+    color: #EAF6F6;
+}
+
+.copyright {
+    color: #EAF6F6;
+    font-size: 0.75rem;
+}
+
+
+.web-dev-gif {
+    width: 30vh;
+}
+
+.gdsc-gif {
+    width: 30vh;
+}
+
+.akshat-pfp {
+    width: 25%;
+}
+
+.profile {
+    width: 50vw;
+}
+
+.about-me-para {
+    display: block;
+    margin: 2vh auto;
+}
+
+.btn {
+    margin-top: 40px;
+    border-radius: 8px;
+    background: linear-gradient(#11cdd4, #11999e);
+    height: 35px;
+    width: 140px;
+    border: none;
+}
+
+.btn:hover {
+    background: linear-gradient(#30e3cb, #2bc4ad);
+}
+
+.contact-me-btn {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.skill-text {
+    width: 40vw;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+}
+
+.skill-row {
+    display: flex;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+}
+
+.skill-row:last-child {
+    flex-direction: row-reverse;
+}
+
+@media (max-width:700px) {
+    .skill-row {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .skill-row:last-child {
+        flex-direction: column;
+    }
+
+    .top-container {
+        flex-direction: column;
+        padding-top: 130px;
+    }
+
+    .akshat-pfp {
+        width: 35%;
+    }
+}
